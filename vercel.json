@@ -2,19 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "assets/*",
+      "src": "/*",
       "use": "@vercel/static"
     }
   ],
@@ -22,13 +10,22 @@
     {
       "src": "/styles.css",
       "headers": {
+        "Cache-Control": "public, max-age=3600",
         "Content-Type": "text/css"
-      },
-      "continue": true
+      }
+    },
+    {
+      "src": "/assets/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/index.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
     }
   ]
 }
