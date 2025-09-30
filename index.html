@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国庆主题头像生成器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>国庆主题头像生成器</h1>
+            <p>上传您的头像，添加五星红旗装饰，庆祝国庆节！</p>
+        </header>
+        
+        <main>
+            <div class="upload-section">
+                <label for="avatar-upload" class="upload-btn">选择头像</label>
+                <input type="file" id="avatar-upload" accept="image/*">
+                <p class="hint">支持JPG、PNG格式，建议使用正方形图片</p>
+            </div>
+            
+            <div class="preview-section">
+                <div class="preview-container">
+                    <div id="preview-original" class="preview-box">
+                        <h3>原始头像</h3>
+                        <div class="image-container">
+                            <img id="original-image" src="" alt="原始头像">
+                        </div>
+                    </div>
+                    
+                    <div id="preview-generated" class="preview-box">
+                        <h3>国庆主题头像</h3>
+                        <div class="image-container">
+                            <div id="result-container" class="result-container">
+                                <canvas id="result-canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button id="generate-btn" disabled>生成国庆头像</button>
+                    <button id="download-btn" disabled>下载头像</button>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>使用说明</h3>
+                <ol>
+                    <li>点击"选择头像"按钮上传您的头像</li>
+                    <li>点击"生成国庆头像"按钮添加五星红旗装饰</li>
+                    <li>点击"下载头像"按钮保存生成的国庆主题头像</li>
+                </ol>
+                <p class="note">注：五星红旗装饰将悬浮在头像上方，营造喜庆氛围。</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 国庆主题头像生成器 | 庆祝中华人民共和国成立76周年</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

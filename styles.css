@@ -1,0 +1,245 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: #e60000;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* 主要内容区域 */
+main {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 上传区域 */
+.upload-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px dashed #e60000;
+    border-radius: 8px;
+}
+
+.upload-btn {
+    display: inline-block;
+    background-color: #e60000;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.upload-btn:hover {
+    background-color: #cc0000;
+}
+
+#avatar-upload {
+    display: none;
+}
+
+.hint {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 预览区域 */
+.preview-section {
+    display: none; /* 默认隐藏 */
+    margin-bottom: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.preview-section.show {
+    display: block;
+    opacity: 1;
+}
+
+/* 使用说明 */
+.instructions {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 4px solid #e60000;
+}
+
+.instructions h3 {
+    color: #e60000;
+    margin-bottom: 15px;
+}
+
+.instructions ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.preview-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.preview-box {
+    width: 48%;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.preview-box h3 {
+    margin-bottom: 15px;
+    color: #e60000;
+}
+
+.image-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#original-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 结果容器样式 */
+.result-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#result-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#flag-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; /* 确保点击事件穿透到下面的元素 */
+}
+
+/* 操作按钮 */
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#generate-btn {
+    background-color: #e60000;
+    color: #fff;
+}
+
+#generate-btn:hover {
+    background-color: #cc0000;
+}
+
+#download-btn {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+#download-btn:hover {
+    background-color: #e6b800;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .preview-container {
+        flex-direction: column;
+    }
+    
+    .preview-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
